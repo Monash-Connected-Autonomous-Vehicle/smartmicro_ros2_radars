@@ -29,10 +29,10 @@ def generate_launch_description():
     """Generate the launch description."""
        
     radar_sensor_params = os.path.join(
-        get_package_share_directory(PACKAGE_NAME), 'param/radar.sensor.template.yaml')
+        get_package_share_directory(PACKAGE_NAME), 'param/mcav/radar.sensor.mcav.yaml')
     
     radar_adapter_params = os.path.join(
-        get_package_share_directory(PACKAGE_NAME), 'param/radar.adapter.template.yaml')
+        get_package_share_directory(PACKAGE_NAME), 'param/mcav/radar.adapter.mcav.yaml')
 
     radar_node = Node(
         package=PACKAGE_NAME,
