@@ -12,7 +12,13 @@ acquired by the sensor through the ROS2 pipeline. This package implements such a
 ```
 
 ## How to launch this node
+
+### MCAV launch setup
+(assuming user is added to the docker group. Otherwise, prefix docker commands with sudo)
 ```
+chmod +x run.sh
+./run.sh
+source install/setup.bash
 ros2 launch umrr_ros2_driver radar.launch.py
 ```
 
