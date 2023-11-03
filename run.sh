@@ -20,13 +20,15 @@ run()
 	# Source the ROS environment variables on startup
 	# Run the container in the background
 
+	echo "Running container..."
+
 	docker run -e DISPLAY -e TERM \
 		--privileged \
 		-v "/dev:/dev:rw" \
 		-v "/lib/modules:/lib/modules:rw" \
 		-v "$(pwd):/code" \
 		-v "/tmp/.X11-unix:/tmp/.X11-unix:rw" \
-		-v "~/.vimrc:~/.vimrc:rw" \
+		-v "/home/mcav/.vimrc:/root/.vimrc:rw" \
 		--net=host \
 		--name $CONTAINER_NAME \
 		--entrypoint /ros_entrypoint.sh \
@@ -36,6 +38,7 @@ run()
 
 attach_to_container()
 {
+	echo "Attaching to container..."
 	# Allow docker windows to show on our current X Server
 	xhost + >> /dev/null
 
